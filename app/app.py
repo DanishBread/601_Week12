@@ -5,6 +5,9 @@ from flask import Flask, Response
 
 app = Flask(__name__)
 
+    ##############################################
+    # Connecting to MySql Server and retrive data
+    ##############################################
 
 def cities_import() -> List[Dict]:
     config = {
@@ -26,6 +29,9 @@ def cities_import() -> List[Dict]:
     return result
 
 
+    ################################
+    # return the data in Json format
+    ################################
 @app.route('/')
 def index() -> str:
     js = json.dumps(cities_import())
